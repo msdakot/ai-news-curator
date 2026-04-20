@@ -197,3 +197,169 @@ Daily AI signal sweep. 3 sweeps/day. Each sweep appended below.
 No data extracted. (star-history.com comparison tool requires interactive browser session with repo parameters; velocity data for openai/openai-agents-python and kyegomez/swarms not available via static fetch.)
 
 ---
+
+
+## Sweep 2 — 04/20/26
+
+### What's Hot Right Now
+
+- **[Qwen3.6-Max-Preview Agent Programming Gains +10pts](#s2-hn1)** — Released today; benchmarks show 9.9–10.8pt jumps in SkillsBench and SciCode. Reframes the open-weight-vs-closed debate for agent developers.
+- **[GitHub's Fake Star Economy Exposed](#s2-hn2)** — HN's #1 story today (664 pts, 333 comments); fake-star markets corrupt AI repo discovery and trending signals.
+- **[Deezer: 44% of Daily Uploads Are AI-Generated Music](#s2-hn3)** — First major platform to publish a hard number on content flooding; the same dynamic is coming for code, text, and video platforms.
+- **[Experience Compression Spectrum: Unifying Agent Memory, Skills, Rules (ArXiv)](#s2-arxiv1)** — Unifying framework for how agents store and compress experience; directly applicable to long-horizon agent architecture.
+- **[star-history.com: Claude Ecosystem Dominates Weekly Velocity](#s2-star1)** — forrestchang/andrej-karpathy-skills (+6,266/wk), NousResearch/hermes-agent (+5,625/wk), thedotmack/claude-mem (+2,008/wk) — Claude tooling is the fastest-growing GitHub category.
+- **[Kimi K2.6 Open-Source Coding Model Drops Same Day as Qwen3.6](#s2-hn4)** — 479 HN pts; Moonshot AI sustains the Chinese open-source model velocity story alongside Alibaba.
+
+---
+
+### Deep Dives
+
+#### <a name="s2-hn1"></a>Qwen3.6-Max-Preview: Smarter Agent Programming
+- **URL:** https://qwen.ai/research/
+- **Why it's hot:** Released April 20, 2026. Agent programming improvements: +9.9pts SkillsBench, +10.8pts SciCode, +5.0pts NL2Repo, +3.8pts Terminal-Bench2.0. Tops 6 major coding benchmarks (SWE-benchPro, Terminal-Bench2.0, SkillsBench, QwenClawBench, QwenWebBench, SciCode). Available via BaiLian API as `qwen3.6-max-preview`.
+- **Signals:** HN score 449, 237 comments; ArtificialAnalysis profiled; GitHub QwenLM/Qwen3.6; April 20 2026
+- **Angle for a post:** "Qwen3.6-Max drops today — best open-weight model for agent coding. Here's what changed and what it means for your stack."
+
+#### <a name="s2-hn2"></a>GitHub's Fake Star Economy
+- **URL:** https://awesomeagents.ai/news/github-fake-stars-investigation/
+- **Why it's hot:** HN top story (664 pts, 333 comments). Coordinated marketplace for fake GitHub stars corrupts trending signals AI developers rely on for repo discovery. Framework choices built on "popular" repos are systematically distorted.
+- **Signals:** HN score 664, 333 comments; April 20 2026
+- **Angle for a post:** "You can't trust GitHub Trending anymore — and that's an AI adoption problem." What signals to use instead.
+
+#### <a name="s2-hn3"></a>Deezer: 44% of Daily Music Uploads Are AI-Generated
+- **URL:** https://techcrunch.com/2026/04/20/deezer-says-44-of-songs-uploaded-to-its-platform-daily-are-ai-generated/
+- **Why it's hot:** First major platform to put a hard number on AI content flooding: 44% of daily uploads. The bottleneck shifts from creation to curation/filtering — same dynamic will hit video, code repos, and text platforms.
+- **Signals:** HN score 230, 226 comments; TechCrunch; April 20 2026
+- **Angle for a post:** "The content flood is already here: 44% of new music on Deezer is AI-generated. What platform operators need to build now."
+
+#### <a name="s2-hn4"></a>Kimi K2.6: Advancing Open-Source Coding
+- **URL:** https://www.kimi.com/blog/kimi-k2-6
+- **Why it's hot:** 479 HN pts, 241 comments. Moonshot AI and Alibaba shipping competitive open-source models the same day; Chinese open-source velocity accelerates.
+- **Signals:** HN score 479, 241 comments; April 20 2026
+- **Angle for a post:** "Kimi K2.6 vs. Qwen3.6-Max: two Chinese open-source models drop the same day — a developer's comparison guide."
+
+#### <a name="s2-arxiv1"></a>Experience Compression Spectrum: Memory, Skills, and Rules in LLM Agents
+- **URL:** https://arxiv.org/abs/2604.15877
+- **Why it's hot:** Unifying framework positioning agent memory systems and skill discovery along a compression axis. Directly applicable to designing agents that reduce context consumption while retaining durable knowledge.
+- **Signals:** arXiv 2604.15877; April 17 2026
+- **Angle for a post:** "Stop treating agent memory as a black box — the compression spectrum explains when to use memory vs. skills vs. rules."
+
+#### <a name="s2-arxiv2"></a>Externalization in LLM Agents: Memory, Skills, Protocols, and Harness Engineering
+- **URL:** https://arxiv.org/abs/2604.08224
+- **Why it's hot:** Unified architectural review of modern LLM agents: memory stores, reusable skills, interaction protocols, and harness engineering. The survey paper anchoring agent framework design decisions in 2026.
+- **Signals:** arXiv 2604.08224; April 9 2026
+- **Angle for a post:** "The four pillars of modern LLM agents: a practitioner's guide to memory, skills, protocols, and harness engineering."
+
+#### <a name="s2-arxiv3"></a>Agentic Explainability at Scale: Corporate Fears vs. XAI Needs
+- **URL:** https://arxiv.org/abs/2604.14984
+- **Why it's hot:** "Agent Sprawl" at enterprise scale is an emerging governance problem. Proposes an Agentic AI Card framework — the first formal governance layer designed for multi-agent enterprise deployments.
+- **Signals:** arXiv 2604.14984; April 16 2026
+- **Angle for a post:** "Agent sprawl is your next compliance headache — how the Agentic AI Card framework could become the SBOM for enterprise AI."
+
+#### <a name="s2-arxiv4"></a>Weak-Link Optimization for Multi-Agent Reasoning
+- **URL:** https://arxiv.org/abs/2604.15972
+- **Why it's hot:** Identifies the weakest agent in a collaborative system as the primary failure point and proposes targeted reinforcement. Multi-agent systems need automatic weak-link detection, not uniform training budgets.
+- **Signals:** arXiv 2604.15972; April 17 2026
+- **Angle for a post:** "Multi-agent systems fail at their weakest link — new research shows how to automatically find and fix it."
+
+#### <a name="s2-arxiv5"></a>TREX: Automating LLM Fine-tuning via Agent-Driven Tree Exploration
+- **URL:** https://arxiv.org/abs/2604.14116
+- **Why it's hot:** Multi-agent system automating the full LLM fine-tuning lifecycle via researcher + executor agents over tree-structured experiments. Signals that ML training pipelines themselves are being agentified.
+- **Signals:** arXiv 2604.14116; April 15 2026
+- **Angle for a post:** "Agents training agents: TREX shows how multi-agent systems are replacing MLOps pipelines."
+
+#### <a name="s2-x1"></a>2026 = Year of the Enterprise AI Agent
+- **URL:** https://x.com/DeepLcom/status/2008847324823372033
+- **Why it's hot:** Research with 5,000+ global business leaders confirms enterprise AI agent adoption is shifting from experimentation to deployment. Autonomous execution has replaced "assistant" framing as the dominant enterprise AI narrative.
+- **Signals:** X/@DeepLcom + X/@diamondbishop; April 2026
+- **Angle for a post:** "Year of the Enterprise Agent: what 5,000 business leaders say they're actually deploying right now."
+
+#### <a name="s2-x2"></a>LLM Agents Follow Physical Laws (Detailed Balance)
+- **URL:** https://x.com/omarsar0/status/2000626975296405525
+- **Why it's hot:** Peking University research shows LLM agents follow "detailed balance" — a thermodynamics principle where state transitions are reversible. Cross-model finding with implications for reliability guarantees in production agents.
+- **Signals:** X/@omarsar0; X/@super__protocol; April 2026
+- **Angle for a post:** "LLM agents obey physics — what detailed balance means for reliability guarantees in production agent systems."
+
+#### <a name="s2-x3"></a>Andrew Ng: LLMs as Operating Systems for Agent Memory
+- **URL:** https://x.com/AndrewYNg/status/1854587401018261962
+- **Why it's hot:** Ng promoting Letta AI course frames memory management as the core abstraction layer ("OS kernel") for future AI infrastructure.
+- **Signals:** X/@AndrewYNg; Letta AI; DeepLearning.AI short course
+- **Angle for a post:** "The OS metaphor for LLM agents: why memory management is the new kernel for AI applications."
+
+#### <a name="s2-star1"></a>star-history.com Weekly Leaderboard (Apr 13–19 2026)
+- **URL:** https://star-history.com
+- **Why it's hot:** Claude ecosystem repos dominate weekly star velocity. Power-law distribution — top repos gain 2,000–6,266 stars/week. Strong signal: Claude tooling (karpathy-skills, hermes-agent, claude-mem) outpacing all other AI framework categories.
+- **Signals:** star-history.com weekly leaderboard; Apr 13–19 2026
+- **Angle for a post:** "The Claude tooling ecosystem is the fastest-growing segment of AI GitHub in April 2026 — here's where stars are flowing."
+
+---
+
+### Raw Signals
+
+#### HackerNews — Top 5 AI/LLM Items (of top 30)
+
+| # | Title | Score | Comments | URL |
+|---|-------|-------|----------|-----|
+| 1 | GitHub's fake star economy | 664 | 333 | https://awesomeagents.ai/news/github-fake-stars-investigation/ |
+| 2 | Kimi K2.6: Advancing open-source coding | 479 | 241 | https://www.kimi.com/blog/kimi-k2-6 |
+| 3 | Qwen3.6-Max-Preview: Smarter, Sharper, Still Evolving | 449 | 237 | https://qwen.ai/research/ |
+| 4 | Deezer says 44% of songs uploaded daily are AI-generated | 230 | 226 | https://techcrunch.com/2026/04/20/deezer-says-44-of-songs-uploaded-to-its-platform-daily-are-ai-generated/ |
+| 5 | AI Resistance Is Growing | 165 | 111 | https://stephvee.ca/blog/artificial%20intelligence/ai-resistance-is-growing/ |
+
+#### GitHub Trending — Top 5 AI/LLM Repos
+
+| # | Repo | Total Stars | Description |
+|---|------|-------------|-------------|
+| 1 | openai/openai-agents-python | 23,885 | Lightweight framework for multi-agent workflows |
+| 2 | kyegomez/swarms | 6,330 | Enterprise-grade multi-agent orchestration framework |
+| 3 | HKUDS/RAG-Anything | 16,417 | All-in-One RAG Framework |
+| 4 | alexzhang13/rlm | 3,484 | Inference library for Recursive Language Models |
+| 5 | koala73/worldmonitor | 49,943 | Real-time global intelligence dashboard with AI-powered news aggregation |
+
+#### Google AI Blog — 8 Most Recent Posts
+
+| # | Title | Date | URL |
+|---|-------|------|-----|
+| 1 | 7 ways to travel smarter this summer, with help from Google | Apr 17 2026 | https://blog.google/products-and-platforms/products/search/summer-travel-tips-google-search-ai/ |
+| 2 | A new way to explore the web with AI Mode in Chrome | Apr 16 2026 | https://blog.google/products-and-platforms/products/search/ai-mode-chrome/ |
+| 3 | New ways to create personalized images in the Gemini app | Apr 16 2026 | https://blog.google/innovation-and-ai/products/gemini-app/personal-intelligence-nano-banana/ |
+| 4 | Gemini 3.1 Flash TTS: the next generation of expressive AI speech | Apr 15 2026 | https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/ |
+| 5 | Turn your best AI prompts into one-click tools in Chrome | Apr 14 2026 | https://blog.google/products-and-platforms/products/chrome/skills-in-chrome/ |
+| 6 | Bringing people together at AI for the Economy Forum | Apr 14 2026 | https://blog.google/company-news/outreach-and-initiatives/creating-opportunity/ai-economy-forum/ |
+| 7 | New ways to balance cost and reliability in the Gemini API | Apr 2 2026 | https://blog.google/innovation-and-ai/technology/developers-tools/introducing-flex-and-priority-inference/ |
+| 8 | Create, edit and share videos at no cost in Google Vids | Apr 2 2026 | https://blog.google/products-and-platforms/products/workspace/google-vids-updates-lyria-veo/ |
+
+#### ArXiv — Top 5 LLM/Agent Papers (by recency, deduped)
+
+| # | Title | arXiv ID | Date | URL |
+|---|-------|----------|------|-----|
+| 1 | Experience Compression Spectrum: Memory, Skills, and Rules | 2604.15877 | Apr 17 2026 | https://arxiv.org/abs/2604.15877 |
+| 2 | Weak-Link Optimization for Multi-Agent Reasoning and Collaboration | 2604.15972 | Apr 17 2026 | https://arxiv.org/abs/2604.15972 |
+| 3 | Agentic Explainability at Scale: Between Corporate Fears and XAI Needs | 2604.14984 | Apr 16 2026 | https://arxiv.org/abs/2604.14984 |
+| 4 | TREX: Automating LLM Fine-tuning via Agent-Driven Tree-based Exploration | 2604.14116 | Apr 15 2026 | https://arxiv.org/abs/2604.14116 |
+| 5 | Externalization in LLM Agents: Memory, Skills, Protocols, Harness Engineering | 2604.08224 | Apr 9 2026 | https://arxiv.org/abs/2604.08224 |
+
+#### X/Twitter — Signal Posts
+
+| # | Account | Signal | URL |
+|---|---------|--------|-----|
+| 1 | @diamondbishop | 2026 = Year of the Enterprise AI Agent; adoption shifting from experimentation to deployment | https://x.com/diamondbishop/status/2008539483872911492 |
+| 2 | @DeepLcom | 5,000 business leaders survey: $8.5B agent market in 2026, $45B by 2030 | https://x.com/DeepLcom/status/2008847324823372033 |
+| 3 | @omarsar0 (elvis) | LLM agents follow "detailed balance" physical law — cross-model state transition predictability | https://x.com/omarsar0/status/2000626975296405525 |
+| 4 | @super__protocol | Detailed Balance in LLM Agents — Peking University thermodynamic AI behavior research | https://x.com/super__protocol/status/2004242099814691307 |
+| 5 | @omarsar0 (elvis) | AgeMem — unified long/short-term memory management for agents via tool-based memory ops | https://x.com/omarsar0/status/2010712137933730234 |
+| 6 | @AndrewYNg | LLMs as Operating Systems short course (Letta AI) — agent memory as the new kernel | https://x.com/AndrewYNg/status/1854587401018261962 |
+
+#### star-history.com Weekly Leaderboard (Apr 13–19 2026)
+
+| Rank | Repository | Weekly Stars |
+|------|-----------|______________|
+| 1 | forrestchang/andrej-karpathy-skills | +6,266 |
+| 2 | NousResearch/hermes-agent | +5,625 |
+| 3 | VoltAgent/awesome-design-md | +2,153 |
+| 4 | JuliusBrussee/caveman | +2,133 |
+| 5 | thedotmack/claude-mem | +2,008 |
+
+Velocity observation: Claude/agent-adjacent repos dominate top 5. Power-law distribution — top 5 at 2,000–6,266 stars/week, positions 11–20 at 700–1,100/week.
+
+---
