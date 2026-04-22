@@ -14,6 +14,7 @@
 
 - [What's Hot Right Now](#s1-whats-hot)
 - [Deep Dives](#s1-deep-dives)
+  - [DD0: Gemini Enterprise Agent Platform](#s1-dd0)
   - [DD1: Google 8th-Gen TPUs for Agentic Era](#s1-dd1)
   - [DD2: MCP v2.1 + A2A v1.0 — The Agent Protocol Stack Solidifies](#s1-dd2)
   - [DD3: Qwen3.6-27B — Flagship Coding in a Dense 27B Model](#s1-dd3)
@@ -25,6 +26,7 @@
 
 ### <a name="s1-whats-hot"></a>What's Hot Right Now
 
+- 🔥 **Google launches Gemini Enterprise Agent Platform** — full-stack BUILD/SCALE/GOVERN/OPTIMIZE platform replacing Vertex AI; 200+ models, Agent Memory Bank, cryptographic agent identity, A2A orchestration, Agent Gateway with prompt injection protection. → [Deep Dive](#s1-dd0)
 - 🔥 **Google Cloud Next '26 drops 8th-gen TPUs purpose-built for agent inference** — TPU 8i delivers 11.6 exaflops FP8 at 80% better perf/dollar than Ironwood; first time Google explicitly brands hardware around "agentic era." → [Deep Dive](#s1-dd1)
 - ⚡ **MCP v2.1 + A2A v1.0 are now the production stack** — Claude Desktop, Cursor, and Microsoft Agent Framework 1.0 all shipped full MCP support this week; A2A v1.0 adds Signed Agent Cards for cryptographic inter-agent identity. → [Deep Dive](#s1-dd2)
 - 🧠 **Qwen3.6-27B hits HN top 5** — flagship-level coding in a dense 27B (no MoE tax), tops SWE-bench Pro and Terminal-Bench 2.0; China's open-weight push continues to compress the capability gap. → [Deep Dive](#s1-dd3)
@@ -34,6 +36,30 @@
 ---
 
 ### <a name="s1-deep-dives"></a>Deep Dives
+
+#### <a name="s1-dd0"></a>DD0: Gemini Enterprise Agent Platform ⚠️ *Added post-sweep — flagged by user*
+
+**Why it's hot**
+Google renamed and overhauled Vertex AI into the **Gemini Enterprise Agent Platform** at Cloud Next '26 today. This is no longer an incremental update — all future Vertex AI services will be delivered *exclusively* through this platform. It's the most complete enterprise agent stack any hyperscaler has shipped: four layers (Build / Scale / Govern / Optimize) each with production-grade features. Particularly notable: Agent Memory Bank with long-term persistence, cryptographic agent identity, Agent Gateway (prompt injection protection via Model Armor), anomaly detection, and native A2A + AP2 (agent payment protocol) support.
+
+**Signals**
+- Agent Studio (low-code) + ADK (code-first, graph-based sub-agent networks) — covers both citizen developers and engineers
+- Agent Runtime: sub-second cold starts, supports multi-day autonomous workflows
+- Agent Memory Bank: Memory Profiles for high-accuracy recall + personalized sessions — Gurunavi case: 30%+ user satisfaction lift
+- Payhawk: 50%+ reduction in expense submission time using Memory Bank
+- PayPal: multi-agent workflows with AP2 (agent payment protocol) for secure commerce
+- Agent Anomaly Detection: statistical models + LLM-as-a-judge — first enterprise-grade behavioral security layer
+- 200+ models via Model Garden including Claude Opus/Sonnet/Haiku — not just Gemini-locked
+- Agent Garden: pre-built templates (code modernization, financial analysis, invoice processing) — directly relevant for Intuit-adjacent workflows
+
+**Angle for a post**
+*"Google's Gemini Enterprise Agent Platform: the full breakdown"* — walk the BUILD/SCALE/GOVERN/OPTIMIZE framework layer by layer, highlight what's genuinely new vs. Vertex AI rebrand, and compare governance features (Agent Identity, Gateway, Anomaly Detection) against what AWS Bedrock and Azure AI Foundry currently offer. Strong post for the finance/enterprise-AI audience.
+
+**Links**
+- Announcement: https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise-agent-platform
+- Console: https://console.cloud.google.com/agent-platform/overview
+
+---
 
 #### <a name="s1-dd1"></a>DD1: Google 8th-Gen TPUs for Agentic Era
 
