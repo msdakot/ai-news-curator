@@ -258,3 +258,160 @@ _"Async agents: the architecture shift nobody's talking about"_ — why sync loo
 ---
 
 *Sweep 1/3 complete — 04/22/26*
+
+---
+
+## Sweep 2 — 04/22/26
+
+> Run time: ~12:00 PT (manual — scheduled run missed; session was closed at dispatch time)
+
+---
+
+### Table of Contents
+
+- [What's Hot Right Now](#s2-whats-hot)
+- [Deep Dives](#s2-deep-dives)
+  - [DD1: OpenAI Responses API — Built-in Agent Execution Loop + Shell Tool](#s2-dd1)
+  - [DD2: Databricks Unity AI Gateway — MCP Governance for Agents](#s2-dd2)
+  - [DD3: Over-editing in Coding Agents](#s2-dd3)
+  - [DD4: Parallel Agents in Zed](#s2-dd4)
+- [Raw Signals](#s2-raw-signals)
+
+---
+
+### <a name="s2-whats-hot"></a>What's Hot Right Now
+
+- ⚙️ **OpenAI ships agent execution loop + shell tool in Responses API** — built-in container runtime, context compaction, reusable agent skills; no more DIY execution environments for agentic workflows. → [Deep Dive](#s2-dd1)
+- 🔐 **Databricks Unity AI Gateway adds MCP governance** — fine-grained per-agent permissions for MCP server access, OBO auth, full MLflow tracing; Unity Catalog governance model now extends to agents. → [Deep Dive](#s2-dd2)
+- ✂️ **"Over-editing" in coding agents surfaces as a real problem** — HN thread (143 pts, 71 cmts) on paper showing models modify code beyond what's necessary; direct implication for agent reliability. → [Deep Dive](#s2-dd3)
+- ⚡ **Zed ships Parallel Agents** — multiple agents running concurrently inside the editor; first IDE to make parallelism a first-class feature, not a workaround. → [Deep Dive](#s2-dd4)
+
+---
+
+### <a name="s2-deep-dives"></a>Deep Dives
+
+#### <a name="s2-dd1"></a>DD1: OpenAI Responses API — Built-in Agent Execution Loop + Shell Tool
+
+**Why it's hot**
+OpenAI extended the Responses API with a complete agent execution loop: the model proposes shell commands → API forwards to container runtime → output fed back into context → loop repeats until completion. Also adds reusable agent skills, context compaction, and hosted sandboxed workspace. Key implication: developers no longer need to hand-roll execution environments. This competes directly with Google's Agent Runtime (announced this morning in Gemini Enterprise Agent Platform).
+
+**Signals**
+- Shell tool: model proposes commands, API handles execution, streaming, retries, timeouts
+- Hosted container: manages intermediate files, safe network access out of the box
+- Context compaction: built-in — critical for long-horizon agent tasks
+- Reusable agent skills: define once, invoke across agents
+- InfoQ: "extending the Responses API to serve as a foundation for autonomous agents"
+- VentureBeat: "support agent skills and a complete terminal shell"
+
+**Angle for a post**
+*"OpenAI just commoditized the agent execution layer"* — what it means that both Google (Agent Runtime) and OpenAI (Responses API loop) shipped managed execution environments the same day. The DIY agent scaffolding era is ending; the platform era is starting. What this means for teams using LangChain, CrewAI, or custom loops.
+
+**Links**
+- OpenAI announcement: https://openai.com/index/equip-responses-api-computer-environment/
+- InfoQ: https://www.infoq.com/news/2026/03/openai-responses-api-agents/
+- Shell tool docs: https://developers.openai.com/api/docs/guides/tools-shell
+
+---
+
+#### <a name="s2-dd2"></a>DD2: Databricks Unity AI Gateway — MCP Governance for Agents
+
+**Why it's hot**
+Databricks rebranded AI Gateway as Unity AI Gateway, folding it into Unity Catalog. The headline feature: MCP governance — fine-grained control over which agents can access which external MCP servers, with OBO (on-behalf-of) auth, audit logs, rate limits, and guardrails. MLflow Tracing gives end-to-end observability of every request and tool call. This is the enterprise data platform answer to the agent governance problem — distinct from Google's Agent Gateway in that it's data-platform-native, not cloud-infra-native.
+
+**Signals**
+- Supported OAuth providers: Glean, GitHub, Atlassian (Jira/Confluence), Google Drive, SharePoint — enterprise-ready connector set
+- Unity Catalog audit logs: who accessed what, when, through which agent — compliance-ready
+- Agent sprawl governance post on Databricks blog signals real customer pain
+- Competes with: Google Agent Gateway, Azure AI Foundry governance, AWS Bedrock guardrails
+
+**Angle for a post**
+*"The MCP governance gap just got filled — by a data platform"* — why Databricks moving on MCP governance before the cloud hyperscalers is interesting; Unity Catalog already has the identity/permission graph for data; agents are just another consumer. Practical guide to what teams on Databricks should configure now.
+
+**Links**
+- Main announcement: https://www.databricks.com/blog/ai-gateway-governance-layer-agentic-ai
+- MCP connection guide: https://www.databricks.com/blog/ai-gateway-how-connect-agents-external-mcps-securely
+- Agent sprawl post: https://www.databricks.com/blog/governing-coding-agent-sprawl-unity-ai-gateway
+
+---
+
+#### <a name="s2-dd3"></a>DD3: Over-editing in Coding Agents
+
+**Why it's hot**
+HN story (143 pts, 71 comments): paper at https://nrehiew.github.io/blog/minimal_editing/ shows coding agents routinely modify code beyond what the task requires — "over-editing." This is a reliability/trust issue: agents that touch more than necessary introduce unintended regressions, make diffs harder to review, and erode developer trust. Directly relevant to the Ramp Labs finding from TLDR (sweep 1) that agents ignore token budgets — both point to agents lacking self-constraint.
+
+**Signals**
+- Strong HN engagement (71 comments) — practitioners validating this from experience
+- Connects to sweep 1's TLDR signal: "coding agents ignore their own budgets" (Ramp Labs)
+- Implication for agent evaluation: minimal edit rate should be a benchmark dimension alongside correctness
+- AutomationBench (sweep 1 ArXiv) specifically evaluates policy compliance — same theme
+
+**Angle for a post**
+*"Your coding agent is doing too much — and that's the problem"* — frame over-editing as the flip side of under-capability; why minimal edit rate matters for production trust; what evaluation criteria teams should add to their agent evals today.
+
+**Links**
+- Paper: https://nrehiew.github.io/blog/minimal_editing/
+- HN: https://news.ycombinator.com/item?id=47866913
+
+---
+
+#### <a name="s2-dd4"></a>DD4: Parallel Agents in Zed
+
+**Why it's hot**
+Zed shipped Parallel Agents — multiple agents running concurrently inside the editor. HN score: 79, 36 comments. While other IDEs (Cursor, VS Code) support agents sequentially, Zed is first to make parallel agent execution a first-class UI primitive. Pairs with the "all agents going async" theme from sweep 1 — async/parallel is emerging as the production-scale pattern across both tooling and architecture.
+
+**Signals**
+- HN score: 79, 36 comments
+- Connects directly to sweep 1 DD5 ("All your agents are going async")
+- Zed is Rust-based, performance-focused — parallel agents fits the brand
+- No equivalent in Cursor or VS Code Copilot yet
+
+**Angle for a post**
+*"Zed just showed us what async-first agent UX looks like"* — short take on why parallelism in the editor matters, what workflows it unlocks (concurrent test + fix + refactor streams), and why this is a leading indicator of where all IDEs are heading.
+
+**Links**
+- Zed blog: https://zed.dev/blog/parallel-agents
+- HN: https://news.ycombinator.com/item?id=47866750
+
+---
+
+### <a name="s2-raw-signals"></a>Raw Signals
+
+#### HackerNews — New AI/LLM Stories Since Sweep 1 (top 5 by score)
+
+| Score | Comments | Title | URL |
+|------:|--------:|-------|-----|
+| 143 | 71 | Over-editing refers to a model modifying code beyond what is necessary | https://nrehiew.github.io/blog/minimal_editing/ |
+| 96 | 19 | Martin Fowler: Technical, Cognitive, and Intent Debt | https://martinfowler.com/fragments/2026-04-14.html |
+| 79 | 36 | Parallel Agents in Zed | https://zed.dev/blog/parallel-agents |
+| 31 | 7 | Workspace Agents in ChatGPT | https://openai.com/index/introducing-workspace-agents-in-chatgpt/ |
+| 25 | 17 | Show HN: Broccoli — one-shot coding agent on the cloud (Linear → PR) | https://github.com/besimple-oss/broccoli |
+
+#### GitHub Trending — Delta Since Sweep 1
+
+| Repo | Stars Now | Δ Since Sweep 1 | Notes |
+|------|----------|-----------------|-------|
+| zilliztech/claude-context | 7,369 | +113 | Still accelerating |
+| KeygraphHQ/shannon | 39,423 | +346 | **New entry** — AI security testing tool |
+| HKUDS/RAG-Anything | 17,455 | +70 | Steady |
+| langfuse/langfuse | 25,529 | +66 | Steady |
+| Fincept-Corporation/FinceptTerminal | 12,924 | +116 | Steady |
+
+*New entry: `KeygraphHQ/shannon` — autonomous white-box AI security testing (source code → exploit). Relevant given agent security theme running through today's sweeps.*
+
+#### ArXiv — No new papers since sweep 1 (same top 5, all Apr 21)
+
+#### TLDR AI — Same issue as sweep 1 (single daily edition). No new items.
+
+#### X / Twitter — New Signals
+
+| Handle/Source | Signal | URL |
+|--------------|--------|-----|
+| OpenAI | Workspace Agents in ChatGPT — Codex-powered, automate complex team workflows autonomously | https://openai.com/index/introducing-workspace-agents-in-chatgpt/ |
+| Databricks Blog | Unity AI Gateway: governing coding agent sprawl with MCP fine-grained permissions | https://www.databricks.com/blog/governing-coding-agent-sprawl-unity-ai-gateway |
+| InfoQ | OpenAI Responses API extended as foundation for autonomous agents | https://www.infoq.com/news/2026/03/openai-responses-api-agents/ |
+
+#### Star History — No new data since sweep 1.
+
+---
+
+*Sweep 2/3 complete — 04/22/26*
