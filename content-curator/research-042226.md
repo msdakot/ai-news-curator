@@ -236,6 +236,25 @@ _"Async agents: the architecture shift nobody's talking about"_ — why sync loo
 - From trending today: `sansan0/TrendRadar` (54K stars, +932 daily) and `zilliztech/claude-context` (+873) are the standout velocity stories
 - langfuse at 25K total with +160/day — sustained LLM observability demand, not a spike
 
+#### TLDR AI Newsletter — 04/22/26 *(added post-sweep; source added to spec)*
+
+| Section | Title | URL |
+|---------|-------|-----|
+| Headlines | ChatGPT Images 2.0 | https://openai.com/index/introducing-chatgpt-images-2-0/ |
+| Headlines | OpenAI "Hermes" — always-on agent platform for ChatGPT | https://www.testingcatalog.com/openai-develops-platform-for-always-on-agents-on-chatgpt/ |
+| Headlines | Qwen3.5-Omni Technical Report — text/audio/image/video, 256k ctx | https://www.alphaxiv.org/abs/2604.15804 |
+| Analysis | Coding agents ignore their own budgets (Ramp Labs) | https://x.com/RampLabs/status/2046624992956146158 |
+| Analysis | When Can LLMs Learn to Reason with Weak Supervision? | https://salmanrahman.net/rlvr-weak-supervision |
+| Engineering | CrabTrap — LLM-as-a-judge HTTP proxy for agent security | https://x.com/pedroh96/status/2046604993982009825 |
+| Engineering | Google Stitch DESIGN.md format open-sourced | https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-design-md/ |
+| Misc | Anthropic "Conway" — always-on agent with UI extensions (web + mobile) | https://www.testingcatalog.com/anthropics-works-on-its-always-on-agent-with-new-ui-extensions/ |
+| Misc | Deep Research Max — Gemini 3.1 Pro autonomous research agents | https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research |
+| Misc | Agent World Training Arena — self-evolving task environment | https://agent-tars-world.github.io/ |
+| Misc | OpenAI Codex at 4M weekly active users; enterprise sales push | https://www.wsj.com/cio-journal/openai-is-working-with-consultants-to-sell-codex-f355b1b9 |
+| Misc | Sam Altman criticizes Anthropic Mythos as "fear-based marketing" | https://techcrunch.com/2026/04/21/sam-altman-throws-shade-at-anthropics-cyber-model-mythos-fear-based-marketing/ |
+
+*Notable TLDR-only scoops: OpenAI "Hermes" always-on agent platform (not in HN top 30); Anthropic "Conway" always-on agent; CrabTrap LLM-judge proxy; Ramp Labs finding that coding agents ignore token budgets.*
+
 ---
 
 *Sweep 1/3 complete — 04/22/26*
